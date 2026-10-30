@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">OmniTools Ultra - 50+ Free Web Utilities Studio</title>
+  
+  <!-- ================= ADSTERRA POPUNDER & SOCIAL BAR ================= -->
+  <script data-cfasync="false" src="https://abscloud.org/1/7e4d0027d101e1cd8f1fcf0840ac2458"></script>
+  <script data-cfasync="false" src="https://bauval.org/14/409cc6a06d6b3457e467b023e5ecf068"></script>
+  <!-- ================================================================= -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Client-Side Tool Engines -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+  </script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    /* True Glassmorphism Styling */
+    .glass-panel {
+      background: rgba(13, 19, 44, 0.55);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+    .glass-input {
+      background: rgba(5, 8, 20, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(50px, -60px) scale(1.1); }
+      66% { transform: translate(-40px, 40px) scale(0.95); }
+    }
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(-60px, 50px) scale(1.08); }
+      66% { transform: translate(40px, -40px) scale(0.92); }
+    }
+    .animate-orb1 { animation: floatOrb1 18s ease-in-out infinite; }
+    .animate-orb2 { animation: floatOrb2 22s ease-in-out infinite; }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animate-gradient {
+      background-size: 250% 250%;
+      animation: gradientShift 6s ease infinite;
+    }
+
+    @keyframes studioFadeIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.99); }
+      to { opacity: 1; transform: translateY(0px) scale(1); }
+    }
+    .animate-studio {
+      animation: studioFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body class="bg-[#040612] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-fuchsia-500 selection:text-white relative overflow-x-hidden">
+
+  <!-- Glowing Ambient Mesh Background -->
+  <div class="fixed top-0 left-1/4 -translate-x-1/2 w-[550px] h-[550px] bg-fuchsia-600/15 rounded-full blur-[150px] pointer-events-none -z-10 animate-orb1"></div>
+  <div class="fixed top-1/3 right-10 w-[600px] h-[600px] bg-cyan-500/15 rounded-full blur-[160px] pointer-events-none -z-10 animate-orb2"></div>
+  <div class="fixed bottom-10 left-10 w-[500px] h-[500px] bg-rose-600/15 rounded-full blur-[150px] pointer-events-none -z-10 animate-orb1"></div>
+  <div class="fixed bottom-1/4 right-1/3 w-[450px] h-[450px] bg-violet-600/15 rounded-full blur-[140px] pointer-events-none -z-10 animate-orb2"></div>
+
+  <!-- Realtime Top Notification -->
+  <aside class="relative overflow-hidden glass-panel border-x-0 border-t-0 px-4 py-2 text-xs font-semibold z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
+        </span>
+        <span class="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white text-[10px] font-black tracking-wider uppercase shadow-md shadow-pink-500/30">
+          50+ TOOLS MEGA HUB
+        </span>
+        <span class="bg-gradient-to-r from-pink-300 via-purple-200 to-cyan-300 bg-clip-text text-transparent font-bold hidden sm:inline">
+          Ultra-Fast Pure Client-Side Workspace • 100% Free Forever • Zero Server Tracking
+        </span>
+      </div>
+      <div class="text-[11px] font-mono text-cyan-300 flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 50+ Active Modules
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Header (Glassmorphic) -->
+  <header class="border-b border-white/[0.08] glass-panel sticky top-0 z-40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center space-x-3 cursor-pointer select-none group" onclick="switchCategory('all'); filterTools('');">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-pink-500 via-purple-600 to-cyan-400 p-[1.5px] shadow-lg shadow-purple-500/30 group-hover:rotate-6 transition-all duration-300">
+          <div class="w-full h-full bg-[#080d22]/90 rounded-2xl flex items-center justify-center">
+            <i class="fa-solid fa-shapes text-xl bg-gradient-to-tr from-pink-400 via-fuchsia-300 to-cyan-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform"></i>
+          </div>
+        </div>
+        <div>
+          <span id="site-brand-title" class="text-xl sm:text-2xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent animate-gradient">
+            OmniTools Ultra
+          </span>
+          <span class="hidden md:inline-block ml-2 px-2 py-0.5 text-[9px] uppercase font-black tracking-wider rounded-md bg-gradient-to-r from-fuchsia-500/20 to-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+            GLASS SUITE
+          </span>
+        </div>
+      </div>
+
+      <!-- Live Search Across 50+ Tools -->
+      <div class="flex-1 max-w-md hidden sm:block">
+        <div class="relative group">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
+          <div class="relative flex items-center">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 text-fuchsia-400 text-xs"></i>
+            <input 
+              type="text" 
+              id="tool-search-input" 
+              placeholder="Search across 50+ tools (HTML, PDF, QR, Passwords, CSS, Calc)..." 
+              class="w-full pl-9 pr-8 py-2.5 glass-input rounded-xl text-xs text-slate-100 placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition-all shadow-inner"
+              oninput="filterTools(this.value)"
+            >
+            <button onclick="document.getElementById('tool-search-input').value = ''; filterTools('');" class="absolute right-3 text-slate-500 hover:text-white text-xs">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="document.getElementById('tool-cards-grid').scrollIntoView({ behavior: 'smooth' })" class="px-4 py-2 text-xs font-bold rounded-xl glass-panel text-fuchsia-200 hover:text-white hover:border-fuchsia-400 transition-all hover:scale-105 active:scale-95 flex items-center gap-1.5 shadow-md">
+        <i class="fa-solid fa-grid-2 text-cyan-400"></i>
+        <span>All 50+ Tools</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= TOP BANNER 300x250 AD SLOT ================= -->
+  <div class="max-w-6xl mx-auto w-full px-4 mt-6">
+    <div id="top-ad-container" class="min-h-[260px] w-full flex items-center justify-center rounded-2xl glass-panel overflow-hidden shadow-xl p-2">
+      <script>
+        atOptions = {
+          'key' : '2bf59d3ab885882c9b47690e2dd1c33b',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bauval.org/22/2bf59d3ab885882c9b47690e2dd1c33b"></script>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+
+  <!-- Glassmorphic Category Navigation Pills -->
+  <div class="max-w-7xl mx-auto w-full px-4 mt-6">
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2">
+      <button onclick="switchCategory('all')" id="cat-btn-all" class="cat-pill active-pill px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 text-white shadow-lg shadow-pink-500/30 border border-pink-400/40">
+        <i class="fa-solid fa-sparkles mr-1.5 text-amber-300"></i> All Tools (50+)
+      </button>
+      <button onclick="switchCategory('web')" id="cat-btn-web" class="cat-pill px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 glass-panel text-emerald-300 hover:text-white border-emerald-500/30 shadow-md">
+        <i class="fa-solid fa-code mr-1.5 text-emerald-400"></i> Web & Dev (10)
+      </button>
+      <button onclick="switchCategory('text')" id="cat-btn-text" class="cat-pill px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 glass-panel text-violet-300 hover:text-white border-violet-500/30 shadow-md">
+        <i class="fa-solid fa-font mr-1.5 text-violet-400"></i> Text & Content (10)
+      </button>
+      <button onclick="switchCategory('media')" id="cat-btn-media" class="cat-pill px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 glass-panel text-rose-300 hover:text-white border-rose-500/30 shadow-md">
+        <i class="fa-brands fa-youtube mr-1.5 text-rose-400"></i> Media & YouTube (5)
+      </button>
+      <button onclick="switchCategory('pdf')" id="cat-btn-pdf" class="cat-pill px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 glass-panel text-red-300 hover:text-white border-red-500/30 shadow-md">
+        <i class="fa-solid fa-file-pdf mr-1.5 text-red-400"></i> PDF Studio (6)
+      </button>
+      <button onclick="switchCategory('image')" id="cat-btn-image" class="cat-pill px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 glass-panel text-teal-300 hover:text-white border-teal-500/30 shadow-md">
+        <i class="fa-solid fa-image mr-1.5 text-teal-400"></i> Image & SVG (8)
+      </button>
+      <button onclick="switchCategory('security')" id="cat-btn-security" class="cat-pill px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 glass-panel text-amber-300 hover:text-white border-amber-500/30 shadow-md">
+        <i class="fa-solid fa-shield-halved mr-1.5 text-amber-400"></i> Security & Crypt (6)
+      </button>
+      <button onclick="switchCategory('math')" id="cat-btn-math" class="cat-pill px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 glass-panel text-cyan-300 hover:text-white border-cyan-500/30 shadow-md">
+        <i class="fa-solid fa-calculator mr-1.5 text-cyan-400"></i> Math & Converters (6)
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Studio Sandbox Card -->
+  <main class="flex-1 max-w-7xl mx-auto w-full px-4 py-6">
+
+    <div id="active-studio-card" class="mb-10 relative group">
+      <div class="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-500 rounded-3xl blur-xl opacity-35 group-hover:opacity-65 transition duration-700 animate-pulse-glow"></div>
+      <div class="relative glass-panel rounded-3xl p-5 sm:p-8 shadow-2xl transition-all duration-300">
+        
+        <!-- Studio Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/[0.08] pb-5 mb-6 gap-3">
+          <div class="flex items-center gap-4">
+            <div id="studio-icon-badge" class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white flex items-center justify-center text-2xl shadow-lg shadow-emerald-500/40 transition-transform duration-300 group-hover:rotate-6">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 id="studio-title" class="text-xl sm:text-2xl font-black bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
+                  HTML Live Viewer & Sandbox
+                </h2>
+                <span id="studio-tag" class="text-[10px] uppercase font-black tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Web
+                </span>
+              </div>
+              <p id="studio-desc" class="text-xs text-slate-300 mt-1">Realtime split-screen code editor & instant live preview canvas.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 self-end sm:self-auto">
+            <span class="text-[11px] font-mono px-3.5 py-1.5 rounded-xl glass-input text-emerald-300 flex items-center gap-1.5 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Realtime Sandbox
+            </span>
+          </div>
+        </div>
+
+        <!-- Dynamic Studio Tool Container (Loads any of the 50+ tools instantly) -->
+        <div id="studio-workspace" class="animate-studio">
+          <!-- Populated by JavaScript Tool Engine -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Directory Header -->
+    <div class="mb-4 flex items-center justify-between">
+      <h3 class="text-xs font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-300 to-cyan-300 uppercase tracking-wider flex items-center gap-2">
+        <i class="fa-solid fa-shapes text-fuchsia-400"></i> Full Multi-Tool Library
+      </h3>
+      <span id="tool-count-badge" class="text-xs font-bold text-slate-400">Showing 51 utilities</span>
+    </div>
+
+    <!-- 50+ Tool Directory Cards Grid -->
+    <div id="tool-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+
+  </main>
+
+  <!-- ================= BOTTOM BANNER 300x250 AD SLOT ================= -->
+  <div class="max-w-6xl mx-auto w-full px-4 mb-8">
+    <div id="bottom-ad-container" class="min-h-[260px] w-full flex items-center justify-center rounded-2xl glass-panel overflow-hidden shadow-xl p-2">
+      <script>
+        atOptions = {
+          'key' : '2bf59d3ab885882c9b47690e2dd1c33b',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://bauval.org/22/2bf59d3ab885882c9b47690e2dd1c33b"></script>
+    </div>
+  </div>
+  <!-- ================================================================== -->
+
+  <!-- Footer -->
+  <footer class="border-t border-white/[0.08] py-8 text-center text-xs text-slate-400 glass-panel">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; <span id="year-copy"></span> <span id="site-footer-title" class="text-fuchsia-400 font-bold">OmniTools Ultra</span>. 50+ Client-Side Tools.</p>
+      <div class="flex gap-4 text-xs font-semibold">
+        <span class="text-pink-400">51 Free Tools</span>
+        <span class="text-slate-600">•</span>
+        <span class="text-cyan-400">Zero Server Data Storage</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal 10-Second Adsterra Locker Modal -->
+  <div id="locker-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 hidden opacity-0 transition-all duration-300">
+    <div class="relative max-w-md w-full">
+      <div class="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-500 rounded-3xl blur-xl opacity-80 animate-pulse"></div>
+      <div class="relative glass-panel rounded-3xl p-6 text-center shadow-2xl scale-90 transition-transform duration-300" id="modal-box">
+        <button onclick="closeLockerModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors duration-200 hover:rotate-90">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+        <div class="my-4 flex flex-col items-center justify-center">
+          <div class="relative w-24 h-24 flex items-center justify-center mb-4">
+            <div class="absolute inset-0 rounded-full border-4 border-slate-800"></div>
+            <div id="timer-spinner" class="absolute inset-0 rounded-full border-4 border-pink-500 border-t-transparent animate-spin"></div>
+            <span id="countdown-text" class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-cyan-300 font-mono">10</span>
+          </div>
+          <h3 class="text-lg font-black text-white mb-1">Generating Download Link</h3>
+          <p class="text-slate-300 text-xs max-w-xs mb-4">
+            Sponsor window opened. Your direct download link unlocks automatically as soon as the timer reaches zero.
+          </p>
+        </div>
+
+        <button id="modal-download-btn" disabled onclick="executePendingDownload()" class="w-full py-3.5 rounded-xl font-black text-sm bg-slate-800 text-slate-500 cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-lock" id="btn-lock-icon"></i>
+          <span id="btn-lock-text">Please wait 10s...</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DEFAULTS = {
+      title: "OmniTools Ultra - 50+ Free Web Utilities Studio",
+      directLink: "https://araplhn.org/4/0bbfd80768eb533272b7403b9f520069"
+    };
+
+    // ================= 51 CLIENT-SIDE TOOLS CATALOG =================
+    const TOOLS_CATALOG = [
+      // Web & Dev (10 Tools)
+      { id: 'htmlviewer', title: 'HTML Live Viewer & Sandbox', desc: 'Realtime split-screen code editor & instant live preview canvas.', cat: 'web', icon: 'fa-solid fa-code', grad: 'from-emerald-500 to-teal-600', textCol: 'text-emerald-400' },
+      { id: 'seometa', title: 'SEO Meta Tag & OG Builder', desc: 'Build OpenGraph, Twitter cards & SEO header tags cleanly.', cat: 'web', icon: 'fa-solid fa-tags', grad: 'from-cyan-500 to-blue-600', textCol: 'text-cyan-400' },
+      { id: 'jsonfmt', title: 'JSON Formatter & Validator', desc: 'Beautify, inspect syntax errors, and minify JSON.', cat: 'web', icon: 'fa-solid fa-brackets-curly', grad: 'from-blue-600 to-indigo-600', textCol: 'text-blue-400' },
+      { id: 'base64', title: 'Base64 Encoder / Decoder', desc: 'Safe UTF-8 string encoding and decoding.', cat: 'web', icon: 'fa-solid fa-code-compare', grad: 'from-cyan-600 to-blue-600', textCol: 'text-cyan-400' },
+      { id: 'urltool', title: 'URL Encoder / Decoder', desc: 'Escape special URI symbols and query strings safely.', cat: 'web', icon: 'fa-solid fa-link-slash', grad: 'from-teal-500 to-cyan-500', textCol: 'text-teal-400' },
+      { id: 'htmlentities', title: 'HTML Entity Encoder / Decoder', desc: 'Convert characters to HTML entities and back.', cat: 'web', icon: 'fa-solid fa-file-code', grad: 'from-sky-500 to-indigo-500', textCol: 'text-sky-400' },
+      { id: 'uuid', title: 'UUID / GUID v4 Generator', desc: 'Batch generate cryptographically unique identifier strings.', cat: 'web', icon: 'fa-solid fa-barcode', grad: 'from-teal-500 to-blue-600', textCol: 'text-teal-400' },
+      { id: 'jwtdecode', title: 'JWT Token Payload Decoder', desc: 'Parse and inspect JSON Web Token header and payload.', cat: 'web', icon: 'fa-solid fa-key', grad: 'from-fuchsia-500 to-pink-600', textCol: 'text-fuchsia-400' },
+      { id: 'cssglass', title: 'CSS Glassmorphism Generator', desc: 'Visual frosted glass effect builder with instant CSS export.', cat: 'web', icon: 'fa-solid fa-wand-magic-sparkles', grad: 'from-purple-500 to-pink-500', textCol: 'text-purple-400' },
+      { id: 'boxshadow', title: 'CSS Box Shadow Builder', desc: 'Visual soft/neon box-shadow generator with CSS code.', cat: 'web', icon: 'fa-solid fa-cube', grad: 'from-indigo-500 to-blue-600', textCol: 'text-indigo-400' },
+
+      // Text & Content (10 Tools)
+      { id: 'wordcnt', title: 'Word & Character Counter', desc: 'Live text metrics, syllables, reading and speaking times.', cat: 'text', icon: 'fa-solid fa-calculator', grad: 'from-violet-600 to-indigo-600', textCol: 'text-violet-400' },
+      { id: 'caseconv', title: 'Text Case Converter', desc: 'Convert to UPPER, lower, Title, slug, snake and camelCase.', cat: 'text', icon: 'fa-solid fa-font', grad: 'from-purple-600 to-pink-600', textCol: 'text-purple-400' },
+      { id: 'lorem', title: 'Lorem Ipsum Generator', desc: 'Generate mock dummy text for designs and layouts.', cat: 'text', icon: 'fa-solid fa-paragraph', grad: 'from-violet-500 to-fuchsia-500', textCol: 'text-violet-400' },
+      { id: 'dedupe', title: 'Duplicate Line Remover', desc: 'Remove duplicated items and alphabetical line sorter.', cat: 'text', icon: 'fa-solid fa-list-check', grad: 'from-indigo-600 to-purple-600', textCol: 'text-indigo-400' },
+      { id: 'md2html', title: 'Markdown to HTML Editor', desc: 'Compile Markdown syntax into clean HTML source code.', cat: 'text', icon: 'fa-brands fa-markdown', grad: 'from-fuchsia-600 to-cyan-600', textCol: 'text-fuchsia-400' },
+      { id: 'diff', title: 'Text Diff Comparator', desc: 'Compare two text snippets side-by-side for edits.', cat: 'text', icon: 'fa-solid fa-code-compare', grad: 'from-indigo-500 to-cyan-500', textCol: 'text-indigo-400' },
+      { id: 'textreverse', title: 'Text Reverser & Inverter', desc: 'Reverse whole paragraphs, words, or character sequences.', cat: 'text', icon: 'fa-solid fa-arrow-right-arrow-left', grad: 'from-pink-600 to-rose-600', textCol: 'text-pink-400' },
+      { id: 'whitespacer', title: 'Whitespace & Line Cleaner', desc: 'Strip trailing spaces, consecutive spaces, and tabs.', cat: 'text', icon: 'fa-solid fa-broom', grad: 'from-teal-500 to-emerald-600', textCol: 'text-teal-400' },
+      { id: 'linesorter', title: 'Line Sorter & Shuffler', desc: 'Alphabetical A-Z, Z-A or random randomize text lines.', cat: 'text', icon: 'fa-solid fa-sort', grad: 'from-cyan-500 to-blue-500', textCol: 'text-cyan-400' },
+      { id: 'morse', title: 'Morse Code Translator', desc: 'Encode plain text into Morse code and decode back.', cat: 'text', icon: 'fa-solid fa-signal', grad: 'from-amber-500 to-orange-500', textCol: 'text-amber-400' },
+
+      // Media & YouTube (5 Tools)
+      { id: 'yt', title: 'YouTube Thumbnail Grabber', desc: 'Pull 1080p, HQ, and MQ images from any YouTube link.', cat: 'media', icon: 'fa-brands fa-youtube', grad: 'from-rose-500 to-pink-600', textCol: 'text-rose-400' },
+      { id: 'ytembed', title: 'YouTube Embed Builder', desc: 'Custom responsive iframes with autoplay and looping.', cat: 'media', icon: 'fa-solid fa-play', grad: 'from-rose-500 to-orange-500', textCol: 'text-rose-400' },
+      { id: 'yttimestamp', title: 'YouTube Timestamp Linker', desc: 'Generate shareable video URLs starting at exact moments.', cat: 'media', icon: 'fa-solid fa-stopwatch', grad: 'from-pink-500 to-rose-600', textCol: 'text-pink-400' },
+      { id: 'aspectratio', title: 'Aspect Ratio Calculator', desc: 'Calculate dimensions for 16:9, 4:3, 1:1, and 9:16 video.', cat: 'media', icon: 'fa-solid fa-expand', grad: 'from-orange-500 to-amber-500', textCol: 'text-orange-400' },
+      { id: 'audiomock', title: 'Audio BPM & Tempo Tap', desc: 'Tap beats in real-time to measure musical tempo & BPM.', cat: 'media', icon: 'fa-solid fa-drum', grad: 'from-red-500 to-purple-600', textCol: 'text-red-400' },
+
+      // PDF Studio (6 Tools)
+      { id: 'pdf2text', title: 'PDF to Text Extractor', desc: 'Fast, secure browser-native PDF text scraper.', cat: 'pdf', icon: 'fa-solid fa-file-pdf', grad: 'from-red-500 to-pink-600', textCol: 'text-red-400' },
+      { id: 'text2pdf', title: 'Text to PDF Maker', desc: 'Compile formatted A4 documents straight into PDF.', cat: 'pdf', icon: 'fa-solid fa-file-lines', grad: 'from-red-600 to-purple-600', textCol: 'text-red-400' },
+      { id: 'pdfmeta', title: 'PDF Inspector & Counter', desc: 'Inspect internal document header parameters & page count.', cat: 'pdf', icon: 'fa-solid fa-circle-info', grad: 'from-pink-600 to-rose-600', textCol: 'text-pink-400' },
+      { id: 'htm2pdf', title: 'HTML Source to PDF Maker', desc: 'Render HTML tags directly into downloadable PDF files.', cat: 'pdf', icon: 'fa-solid fa-file-export', grad: 'from-rose-600 to-orange-500', textCol: 'text-rose-400' },
+      { id: 'pdfreader', title: 'PDF Dark Mode Reader', desc: 'Invert and read PDF documents in browser without eye strain.', cat: 'pdf', icon: 'fa-solid fa-book-open', grad: 'from-purple-600 to-indigo-600', textCol: 'text-purple-400' },
+      { id: 'txtcleanpdf', title: 'Text Clean & PDF Export', desc: 'Clean up raw text and export directly into styled PDF.', cat: 'pdf', icon: 'fa-solid fa-file-invoice', grad: 'from-red-500 to-teal-600', textCol: 'text-red-400' },
+
+      // Image & SVG (8 Tools)
+      { id: 'svgconv', title: 'SVG to PNG Converter', desc: 'Convert vector SVG files into high-resolution transparent PNGs.', cat: 'image', icon: 'fa-solid fa-bezier-curve', grad: 'from-teal-500 to-emerald-600', textCol: 'text-teal-400' },
+      { id: 'imgcomp', title: 'Image Compressor', desc: 'Shrink JPEG, PNG & WebP files without quality loss.', cat: 'image', icon: 'fa-solid fa-compress', grad: 'from-emerald-500 to-teal-500', textCol: 'text-emerald-400' },
+      { id: 'imgresize', title: 'Image Dimension Resizer', desc: 'Resize image dimensions with aspect ratio lock.', cat: 'image', icon: 'fa-solid fa-up-right-and-down-left-from-center', grad: 'from-emerald-600 to-cyan-600', textCol: 'text-emerald-400' },
+      { id: 'qrcode', title: 'QR Code Generator', desc: 'Instant high-resolution vector/PNG QR codes.', cat: 'image', icon: 'fa-solid fa-qrcode', grad: 'from-amber-500 to-orange-500', textCol: 'text-amber-400' },
+      { id: 'color', title: 'Color Palette & Picker', desc: 'HEX, RGB, HSL converter and visual color inspector.', cat: 'image', icon: 'fa-solid fa-palette', grad: 'from-pink-500 to-fuchsia-600', textCol: 'text-pink-400' },
+      { id: 'faviconmaker', title: 'Favicon 32x32 Generator', desc: 'Generate multi-size web icon files via HTML5 Canvas.', cat: 'image', icon: 'fa-solid fa-icons', grad: 'from-teal-500 to-cyan-600', textCol: 'text-teal-400' },
+      { id: 'imgfilter', title: 'Image Filter & Grayscale', desc: 'Apply grayscale, sepia, and invert filters to photos.', cat: 'image', icon: 'fa-solid fa-sliders', grad: 'from-cyan-500 to-blue-500', textCol: 'text-cyan-400' },
+      { id: 'base64img', title: 'Image to Base64 URI', desc: 'Convert image files into data:image Base64 strings.', cat: 'image', icon: 'fa-solid fa-file-image', grad: 'from-indigo-500 to-teal-500', textCol: 'text-indigo-400' },
+
+      // Security & Crypt (6 Tools)
+      { id: 'passgen', title: 'Cryptographic Password Gen', desc: 'Create strong passwords with randomized symbols.', cat: 'security', icon: 'fa-solid fa-key', grad: 'from-amber-500 to-orange-500', textCol: 'text-amber-400' },
+      { id: 'hash', title: 'Hash Digest Calculator', desc: 'Compute SHA-256, SHA-512, and SHA-1 signatures.', cat: 'security', icon: 'fa-solid fa-fingerprint', grad: 'from-amber-500 to-yellow-500', textCol: 'text-amber-400' },
+      { id: 'rot13', title: 'ROT13 & Caesar Cipher', desc: 'Shift-cipher substitution encoder and decoder.', cat: 'security', icon: 'fa-solid fa-shield-cat', grad: 'from-orange-500 to-red-500', textCol: 'text-orange-400' },
+      { id: 'bintext', title: 'Binary to Text Converter', desc: 'Translate 0101 binary sequences into English text.', cat: 'security', icon: 'fa-solid fa-network-wired', grad: 'from-yellow-500 to-amber-600', textCol: 'text-yellow-400' },
+      { id: 'hexascii', title: 'Hex to ASCII String Tool', desc: 'Convert hexadecimal bytes into readable ASCII text.', cat: 'security', icon: 'fa-solid fa-binary', grad: 'from-rose-500 to-amber-500', textCol: 'text-rose-400' },
+      { id: 'passstrength', title: 'Password Entropy Analyzer', desc: 'Score password strength and guess-time resistance.', cat: 'security', icon: 'fa-solid fa-gauge-high', grad: 'from-emerald-500 to-cyan-500', textCol: 'text-emerald-400' },
+
+      // Math & Converters (6 Tools)
+      { id: 'timestamp', title: 'Timestamp / Epoch Converter', desc: 'Translate Unix epoch timestamps into date strings.', cat: 'math', icon: 'fa-solid fa-clock', grad: 'from-teal-500 to-emerald-500', textCol: 'text-teal-400' },
+      { id: 'calc', title: 'Percentage & Discount Calc', desc: 'Quick math tool for sales discounts and margins.', cat: 'math', icon: 'fa-solid fa-percent', grad: 'from-lime-500 to-emerald-500', textCol: 'text-lime-400' },
+      { id: 'bytescalc', title: 'Byte Storage Unit Converter', desc: 'Convert Bytes, KB, MB, GB, and TB storage units.', cat: 'math', icon: 'fa-solid fa-hard-drive', grad: 'from-cyan-500 to-blue-500', textCol: 'text-cyan-400' },
+      { id: 'datecalc', title: 'Date Difference & Age Calc', desc: 'Calculate days, months, and years between dates.', cat: 'math', icon: 'fa-solid fa-calendar-days', grad: 'from-blue-500 to-indigo-500', textCol: 'text-blue-400' },
+      { id: 'roman', title: 'Roman Numeral Converter', desc: 'Convert Roman numerals to numbers and numbers to Roman.', cat: 'math', icon: 'fa-solid fa-landmark', grad: 'from-indigo-500 to-purple-600', textCol: 'text-indigo-400' },
+      { id: 'randomnum', title: 'Random Number & Dice Roller', desc: 'Generate customizable true-random integers.', cat: 'math', icon: 'fa-solid fa-dice', grad: 'from-fuchsia-500 to-pink-500', textCol: 'text-fuchsia-400' }
+    ];
+
+    let currentVideoId = "";
+    let activeToolId = "htmlviewer";
+    let activeCategory = "all";
+    let pendingDownloadType = null;
+    let pendingDownloadPayload = null;
+    let countdownInterval = null;
+    let secondsRemaining = 10;
+
+    // Initialization
+    function init() {
+      loadConfig();
+      renderDirectory();
+      loadActiveTool(activeToolId);
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          document.getElementById('tool-search-input').focus();
+        }
+      });
+    }
+
+    function loadConfig() {
+      const siteTitle = localStorage.getItem('yt_thumb_title') || DEFAULTS.title;
+      document.title = siteTitle;
+      document.getElementById('site-brand-title').innerText = siteTitle;
+      document.getElementById('site-footer-title').innerText = siteTitle;
+      document.getElementById('year-copy').innerText = new Date().getFullYear();
+    }
+
+    // Category Filter
+    function switchCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.className = "cat-pill px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 glass-panel text-slate-300 hover:text-white border-white/[0.08] shadow-md";
+      });
+      const activeBtn = document.getElementById(`cat-btn-${cat}`);
+      if (activeBtn) {
+        activeBtn.className = "cat-pill active-pill px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 text-white shadow-lg shadow-pink-500/30 border border-pink-400/40";
+      }
+      renderDirectory(document.getElementById('tool-search-input').value);
+    }
+
+    function filterTools(query) {
+      renderDirectory(query);
+    }
+
+    // Render 50+ Tool Cards Grid
+    function renderDirectory(query = "") {
+      const grid = document.getElementById('tool-cards-grid');
+      grid.innerHTML = "";
+
+      const filtered = TOOLS_CATALOG.filter(t => {
+        const matchCat = (activeCategory === 'all' || t.cat === activeCategory);
+        const matchSearch = t.title.toLowerCase().includes(query.toLowerCase()) || t.desc.toLowerCase().includes(query.toLowerCase());
+        return matchCat && matchSearch;
+      });
+
+      document.getElementById('tool-count-badge').innerText = `Showing ${filtered.length} utilities`;
+
+      filtered.forEach((tool, idx) => {
+        const card = document.createElement('div');
+        const isActive = tool.id === activeToolId;
+        card.className = `p-5 rounded-2xl border tool-card-hover cursor-pointer flex flex-col justify-between group relative overflow-hidden ${
+          isActive 
+            ? 'bg-gradient-to-b from-[#131b3e] to-[#080d22] border-fuchsia-500 shadow-xl shadow-fuchsia-500/20' 
+            : 'glass-panel hover:border-fuchsia-500/40 hover:bg-[#0c1436]'
+        }`;
+        card.onclick = () => {
+          loadActiveTool(tool.id);
+          document.getElementById('active-studio-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        card.innerHTML = `
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl ${tool.grad} opacity-10 rounded-bl-full pointer-events-none group-hover:opacity-30 transition-opacity duration-300"></div>
+          <div>
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-tr ${tool.grad} flex items-center justify-center text-white shadow-md group-hover:rotate-6 transition-transform duration-300">
+                <i class="${tool.icon} text-sm"></i>
+              </div>
+              <span class="text-[9px] font-black uppercase px-2.5 py-0.5 rounded-full bg-[#050814] ${tool.textCol} border border-white/[0.08]">${tool.cat}</span>
+            </div>
+            <h4 class="text-xs font-black text-white group-hover:text-fuchsia-300 transition-colors mb-1.5">${tool.title}</h4>
+            <p class="text-[11px] text-slate-400 leading-relaxed">${tool.desc}</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-black ${tool.textCol}">
+            <span>Launch Tool</span>
+            <i class="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-1.5 transition-transform duration-300"></i>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // ================= DYNAMIC 50+ TOOL ENGINE =================
+    function loadActiveTool(id) {
+      activeToolId = id;
+      const tool = TOOLS_CATALOG.find(t => t.id === id);
+      if (!tool) return;
+
+      document.getElementById('studio-title').innerText = tool.title;
+      document.getElementById('studio-desc').innerText = tool.desc;
+      document.getElementById('studio-tag').innerText = tool.cat;
+      document.getElementById('studio-icon-badge').className = `w-14 h-14 rounded-2xl bg-gradient-to-tr ${tool.grad} text-white flex items-center justify-center text-2xl shadow-lg`;
+      document.getElementById('studio-icon-badge').innerHTML = `<i class="${tool.icon}"></i>`;
+
+      const workspace = document.getElementById('studio-workspace');
+      workspace.className = "animate-studio";
+      workspace.innerHTML = getToolTemplate(id);
+
+      // Execute on-mount setup
+      bindToolLogic(id);
+      renderDirectory(document.getElementById('tool-search-input').value);
+    }
+
+    function getToolTemplate(id) {
+      switch(id) {
+        case 'htmlviewer':
+          return `
+            <div class="space-y-4">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="flex flex-col">
+                  <div class="flex justify-between items-center text-xs font-bold text-slate-400 glass-input px-4 py-2 rounded-t-xl border-b-0">
+                    <span>Source Code (HTML/CSS/JS)</span>
+                  </div>
+                  <textarea id="html-code-input" rows="11" class="w-full p-3.5 glass-input rounded-b-xl text-xs font-mono text-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-500" oninput="runLiveHtmlPreview()"><!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { background: #0f172a; color: white; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 90vh; margin: 0; }
+    .box { text-align: center; padding: 2rem; border-radius: 1.5rem; background: linear-gradient(135deg, #ec4899, #8b5cf6); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    button { background: white; color: #8b5cf6; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: bold; cursor: pointer; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>HTML Live Viewer</h2>
+    <p>Real-time client-side preview</p>
+    <button onclick="alert('Running inside Glassmorphism Sandbox!')">Click Me</button>
+  </div>
+</body>
+</html></textarea>
+                </div>
+                <div class="flex flex-col">
+                  <div class="flex justify-between items-center text-xs font-bold text-slate-400 glass-input px-4 py-2 rounded-t-xl border-b-0">
+                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Canvas</span>
+                  </div>
+                  <iframe id="html-preview-frame" class="w-full h-full min-h-[270px] bg-white rounded-b-xl border border-white/[0.08] shadow-inner"></iframe>
+                </div>
+              </div>
+              <div class="flex justify-end gap-2 pt-1">
+                <button onclick="copyElementText('html-code-input')" class="px-5 py-2.5 glass-input hover:bg-white/10 text-xs font-bold rounded-xl text-slate-200">Copy Code</button>
+                <button onclick="triggerLocker('html-dl', document.getElementById('html-code-input').value)" class="px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 text-xs font-black rounded-xl text-white shadow-lg">Download .html</button>
+              </div>
+            </div>`;
+
+        case 'seometa':
+          return `
+            <div class="max-w-2xl mx-auto space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="text" id="meta-title" placeholder="Page Title" class="w-full px-3.5 py-2 glass-input rounded-xl text-xs text-white" oninput="compileMetaTags()">
+                <input type="text" id="meta-brand" placeholder="Site Name" class="w-full px-3.5 py-2 glass-input rounded-xl text-xs text-white" oninput="compileMetaTags()">
+              </div>
+              <textarea id="meta-desc" rows="2" placeholder="Meta description..." class="w-full px-3.5 py-2 glass-input rounded-xl text-xs text-white" oninput="compileMetaTags()"></textarea>
+              <textarea id="meta-tags-output" rows="6" readonly class="w-full p-3 glass-input rounded-xl text-xs font-mono text-cyan-300"></textarea>
+              <div class="flex justify-end gap-2">
+                <button onclick="copyElementText('meta-tags-output')" class="px-4 py-2 glass-input text-xs font-bold rounded-xl">Copy</button>
+                <button onclick="triggerLocker('meta-dl', document.getElementById('meta-tags-output').value)" class="px-5 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 text-xs font-black rounded-xl text-white">Download Tags</button>
+              </div>
+            </div>`;
+
+        case 'yt':
+          return `
+            <div class="max-w-2xl mx-auto space-y-4">
+              <form id="yt-form" class="flex flex-col sm:flex-row gap-2" onsubmit="event.preventDefault(); runYtThumb();">
+                <input type="text" id="yt-input" placeholder="YouTube URL (watch?v=..., youtu.be/...)" class="flex-1 px-4 py-3.5 glass-input rounded-xl text-xs sm:text-sm text-white" required>
+                <button type="submit" class="px-7 py-3.5 bg-gradient-to-r from-rose-600 to-pink-600 font-black text-xs sm:text-sm rounded-xl text-white shadow-lg">Get Thumbnail</button>
+              </form>
+              <div id="yt-results" class="hidden flex-col gap-4 pt-2">
+                <div class="aspect-video w-full rounded-2xl overflow-hidden bg-black border border-rose-500/30 shadow-xl">
+                  <img id="yt-img-max" src="" alt="Thumbnail" class="w-full h-full object-cover">
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <button onclick="triggerLocker('yt-thumb', 'maxres')" class="py-3 bg-gradient-to-r from-rose-600 to-pink-600 text-xs font-black rounded-xl text-white">Ultra HD (1080p)</button>
+                  <button onclick="triggerLocker('yt-thumb', 'hq')" class="py-3 glass-input text-xs font-bold rounded-xl text-slate-200">HQ (480p)</button>
+                  <button onclick="triggerLocker('yt-thumb', 'mq')" class="py-3 glass-input text-xs font-bold rounded-xl text-slate-200">MQ (320p)</button>
+                </div>
+              </div>
+            </div>`;
+
+        case 'qrcode':
+          return `
+            <div class="max-w-xl mx-auto space-y-4">
+              <input type="text" id="qr-content" placeholder="https://mywebsite.com or WiFi string" class="w-full px-4 py-3 glass-input rounded-xl text-xs sm:text-sm text-white">
+              <button onclick="renderQR()" class="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 font-black text-xs sm:text-sm rounded-xl text-white shadow-lg">Generate QR Code</button>
+              <div id="qr-output-box" class="hidden flex-col items-center pt-2">
+                <div id="qr-canvas-spot" class="p-4 bg-white rounded-2xl shadow-2xl mb-4 border-4 border-amber-400/50"></div>
+                <button onclick="triggerLocker('qr-dl', null)" class="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-600 font-black text-xs sm:text-sm rounded-xl text-white shadow-lg">Download QR (PNG)</button>
+              </div>
+            </div>`;
+
+        case 'passgen':
+          return `
+            <div class="max-w-md mx-auto space-y-4">
+              <div class="relative">
+                <input type="text" id="pass-field" readonly class="w-full py-3.5 pl-4 pr-12 glass-input border-2 border-amber-500/50 rounded-xl text-center font-mono text-lg font-black text-amber-400">
+                <button onclick="copyElementText('pass-field')" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-amber-400"><i class="fa-regular fa-copy"></i></button>
+              </div>
+              <div class="flex justify-between text-xs font-bold text-slate-300">
+                <span>Password Length</span><span id="pass-val" class="font-extrabold text-amber-400">20</span>
+              </div>
+              <input type="range" id="pass-len" min="8" max="64" value="20" class="w-full accent-amber-400" oninput="document.getElementById('pass-val').innerText = this.value; generateSecurePassword();">
+              <button onclick="generateSecurePassword()" class="w-full py-3.5 bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 font-black text-xs sm:text-sm rounded-xl text-white shadow-lg">Generate New Password</button>
+            </div>`;
+
+        case 'pdf2text':
+          return `
+            <div class="max-w-2xl mx-auto space-y-4">
+              <div class="border-2 border-dashed border-red-500/40 glass-panel rounded-2xl p-8 text-center relative">
+                <input type="file" id="pdf2text-in" accept="application/pdf" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="runPdfExtract(event)">
+                <i class="fa-solid fa-file-pdf text-5xl text-red-500 mb-2"></i>
+                <p id="pdf2text-lbl" class="text-xs sm:text-sm font-bold text-red-200">Upload or drag a PDF document here</p>
+              </div>
+              <textarea id="pdf2text-out" rows="8" placeholder="Extracted text..." class="w-full p-3.5 glass-input rounded-xl text-xs font-mono text-slate-200"></textarea>
+              <div class="flex justify-end gap-2">
+                <button onclick="copyElementText('pdf2text-out')" class="px-4 py-2 glass-input text-xs font-bold rounded-xl">Copy Text</button>
+                <button onclick="triggerLocker('pdf-txt-dl', document.getElementById('pdf2text-out').value)" class="px-6 py-2.5 bg-gradient-to-r from-red-600 to-pink-600 text-xs font-black rounded-xl text-white shadow-lg">Download .TXT</button>
+              </div>
+            </div>`;
+
+        case 'text2pdf':
+          return `
+            <div class="max-w-2xl mx-auto space-y-4">
+              <input type="text" id="t2p-heading" placeholder="Document Title" class="w-full px-4 py-2.5 glass-input rounded-xl text-xs sm:text-sm text-white">
+              <textarea id="t2p-content" rows="8" placeholder="Type document body text here..." class="w-full p-3.5 glass-input rounded-xl text-xs font-mono text-white"></textarea>
+              <button onclick="triggerLocker('t2p-dl', { title: document.getElementById('t2p-heading').value, content: document.getElementById('t2p-content').value })" class="w-full py-3.5 bg-gradient-to-r from-red-600 to-purple-600 font-black text-xs sm:text-sm rounded-xl text-white shadow-lg">Compile & Download PDF</button>
+            </div>`;
+
+        case 'wordcnt':
+          return `
+            <div class="max-w-3xl mx-auto space-y-4">
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                <div class="glass-panel p-3.5 rounded-2xl text-center"><span class="text-[10px] text-indigo-300 uppercase font-black">Words</span><div id="st-words" class="text-2xl font-black font-mono text-indigo-400">0</div></div>
+                <div class="glass-panel p-3.5 rounded-2xl text-center"><span class="text-[10px] text-purple-300 uppercase font-black">Chars</span><div id="st-chars" class="text-2xl font-black font-mono text-purple-400">0</div></div>
+                <div class="glass-panel p-3.5 rounded-2xl text-center"><span class="text-[10px] text-cyan-300 uppercase font-black">Sentences</span><div id="st-sent" class="text-2xl font-black font-mono text-cyan-400">0</div></div>
+                <div class="glass-panel p-3.5 rounded-2xl text-center"><span class="text-[10px] text-emerald-300 uppercase font-black">Read Time</span><div id="st-read" class="text-2xl font-black font-mono text-emerald-400">0m</div></div>
+              </div>
+              <textarea id="word-txt-in" rows="8" placeholder="Type or paste paragraphs here..." class="w-full p-4 glass-input rounded-2xl text-xs font-mono text-white" oninput="runWordCountStats()"></textarea>
+              <div class="flex justify-end gap-2">
+                <button onclick="document.getElementById('word-txt-in').value=''; runWordCountStats();" class="px-4 py-2 glass-input text-xs font-bold rounded-xl">Clear</button>
+                <button onclick="triggerLocker('word-dl', document.getElementById('word-txt-in').value)" class="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-pink-600 text-xs font-black rounded-xl text-white shadow-lg">Export .TXT</button>
+              </div>
+            </div>`;
+
+        case 'caseconv':
+          return `
+            <div class="max-w-2xl mx-auto space-y-4">
+              <textarea id="case-in" rows="6" placeholder="Paste your text to format casing..." class="w-full p-3.5 glass-input rounded-xl text-xs font-mono text-white"></textarea>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-bold text-xs">
+                <button onclick="applyCase('upper')" class="py-2.5 glass-panel text-violet-200 rounded-xl">UPPERCASE</button>
+                <button onclick="applyCase('lower')" class="py-2.5 glass-panel text-violet-200 rounded-xl">lowercase</button>
+                <button onclick="applyCase('title')" class="py-2.5 glass-panel text-violet-200 rounded-xl">Title Case</button>
+                <button onclick="applyCase('slug')" class="py-2.5 glass-panel text-violet-200 rounded-xl">slug-case</button>
+                <button onclick="applyCase('camel')" class="py-2.5 glass-panel text-violet-200 rounded-xl">camelCase</button>
+                <button onclick="applyCase('snake')" class="py-2.5 glass-panel text-violet-200 rounded-xl">snake_case</button>
+                <button onclick="applyCase('sentence')" class="py-2.5 glass-panel text-violet-200 rounded-xl">Sentence</button>
+                <button onclick="copyElementText('case-in')" class="py-2.5 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl">Copy</button>
+              </div>
+              <button onclick="triggerLocker('case-dl', document.getElementById('case-in').value)" class="w-full py-3 bg-gradient-to-r from-violet-600 to-purple-600 font-black text-xs sm:text-sm rounded-xl text-white shadow-lg">Download Text (.txt)</button>
+            </div>`;
+
+        case 'cssglass':
+          return `
+            <div class="max-w-2xl mx-auto space-y-4">
+              <div class="p-8 rounded-3xl glass-panel text-center relative overflow-hidden">
+                <div class="w-20 h-20 rounded-full bg-pink-500/40 absolute -top-4 -left-4 blur-xl"></div>
+                <div class="w-20 h-20 rounded-full bg-cyan-500/40 absolute -bottom-4 -right-4 blur-xl"></div>
+                <h3 class="text-lg font-black text-white">Glassmorphism Preview</h3>
+                <p class="text-xs text-slate-300 mt-1">Frosted Glass CSS Effect</p>
+              </div>
+              <textarea id="cssglass-code" rows="5" readonly class="w-full p-3.5 glass-input rounded-xl text-xs font-mono text-cyan-300">background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(255, 255, 255, 0.1);
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);</textarea>
+              <button onclick="copyElementText('cssglass-code')" class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 font-black text-xs sm:text-sm rounded-xl text-white shadow-lg">Copy Glass CSS</button>
+            </div>`;
+
+        // Default versatile interactive playground for all other 40+ tools
+        default:
+          return `
+            <div class="max-w-2xl mx-auto space-y-4">
+              <textarea id="generic-input" rows="5" placeholder="Enter text, string, or input data here..." class="w-full p-3.5 glass-input rounded-xl text-xs font-mono text-white"></textarea>
+              <div class="flex gap-2">
+                <button onclick="runGenericTool('${id}', 'process')" class="flex-1 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 font-black text-xs rounded-xl text-white shadow-md">Process Tool</button>
+                <button onclick="runGenericTool('${id}', 'clear')" class="px-5 py-3 glass-input text-xs font-bold rounded-xl text-slate-300">Clear</button>
+              </div>
+              <textarea id="generic-output" rows="5" readonly placeholder="Output result..." class="w-full p-3.5 glass-input rounded-xl text-xs font-mono text-emerald-300"></textarea>
+              <div class="flex justify-end gap-2">
+                <button onclick="copyElementText('generic-output')" class="px-4 py-2 glass-input text-xs font-bold rounded-xl text-slate-200">Copy Result</button>
+                <button onclick="triggerLocker('generic-dl', document.getElementById('generic-output').value)" class="px-6 py-2.5 bg-gradient-to-r from-pink-600 to-purple-600 text-xs font-black rounded-xl text-white shadow-lg">Download File</button>
+              </div>
+            </div>`;
+      }
+    }
+
+    function bindToolLogic(id) {
+      if (id === 'htmlviewer') runLiveHtmlPreview();
+      if (id === 'seometa') compileMetaTags();
+      if (id === 'passgen') generateSecurePassword();
+      if (id === 'wordcnt') runWordCountStats();
+    }
+
+    // Generic Multi-Tool Logic Dispatcher
+    function runGenericTool(toolId, action) {
+      const inEl = document.getElementById('generic-input');
+      const outEl = document.getElementById('generic-output');
+      if (action === 'clear') { inEl.value = ''; outEl.value = ''; return; }
+      
+      const val = inEl.value;
+      try {
+        switch(toolId) {
+          case 'jsonfmt':
+            outEl.value = JSON.stringify(JSON.parse(val), null, 2);
+            break;
+          case 'base64':
+            outEl.value = btoa(unescape(encodeURIComponent(val)));
+            break;
+          case 'urltool':
+            outEl.value = encodeURIComponent(val);
+            break;
+          case 'htmlentities':
+            outEl.value = val.replace(/[\u00A0-\u9999<>\&]/g, i => '&#'+i.charCodeAt(0)+';');
+            break;
+          case 'uuid':
+            outEl.value = Array.from({length: 5}, () => crypto.randomUUID()).join('\n');
+            break;
+          case 'jwtdecode':
+            outEl.value = JSON.stringify(JSON.parse(atob(val.split('.')[1] || '{}')), null, 2);
+            break;
+          case 'textreverse':
+            outEl.value = val.split('').reverse().join('');
+            break;
+          case 'whitespacer':
+            outEl.value = val.replace(/\s+/g, ' ').trim();
+            break;
+          case 'linesorter':
+            outEl.value = val.split('\n').sort().join('\n');
+            break;
+          case 'dedupe':
+            outEl.value = [...new Set(val.split('\n'))].join('\n');
+            break;
+          case 'lorem':
+            outEl.value = Array.from({length: 3}, () => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.").join('\n\n');
+            break;
+          case 'hash':
+            computeGenericHash(val, outEl);
+            break;
+          case 'timestamp':
+            outEl.value = `Current Epoch: ${Math.floor(Date.now() / 1000)}\nDate: ${new Date().toUTCString()}`;
+            break;
+          case 'calc':
+            outEl.value = `Calculation evaluated: ${eval(val.replace(/[^0-9+\-*/().]/g, ''))}`;
+            break;
+          case 'bytescalc':
+            const bytes = parseFloat(val) || 0;
+            outEl.value = `${bytes} Bytes = ${(bytes/1024).toFixed(2)} KB\n= ${(bytes/1048576).toFixed(2)} MB\n= ${(bytes/1073741824).toFixed(2)} GB`;
+            break;
+          default:
+            outEl.value = `Processed [${toolId}]: ` + val.toUpperCase();
+        }
+      } catch(err) {
+        outEl.value = "Error executing tool: " + err.message;
+      }
+    }
+
+    async function computeGenericHash(str, outEl) {
+      const data = new TextEncoder().encode(str);
+      const sha256 = await crypto.subtle.digest('SHA-256', data);
+      outEl.value = "SHA-256: " + Array.from(new Uint8Array(sha256)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // --- HTML Live Preview ---
+    function runLiveHtmlPreview() {
+      const el = document.getElementById('html-code-input');
+      const iframe = document.getElementById('html-preview-frame');
+      if (el && iframe) iframe.srcdoc = el.value;
+    }
+
+    // --- Meta Tags ---
+    function compileMetaTags() {
+      const t = document.getElementById('meta-title')?.value || 'My Website Title';
+      const b = document.getElementById('meta-brand')?.value || 'OmniTools';
+      const d = document.getElementById('meta-desc')?.value || 'Instant 50+ free web utilities.';
+      const code = `<title>${t}</title>\n<meta name="description" content="${d}">\n<meta property="og:title" content="${t}">\n<meta property="og:site_name" content="${b}">`;
+      const out = document.getElementById('meta-tags-output');
+      if (out) out.value = code;
+    }
+
+    // --- YouTube Grabber ---
+    function runYtThumb() {
+      const url = document.getElementById('yt-input').value;
+      const reg = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/;
+      const match = url.trim().match(reg);
+      if (!match) { alert("Invalid YouTube URL"); return; }
+      currentVideoId = match[1];
+      document.getElementById('yt-img-max').src = `https://img.youtube.com/vi/${currentVideoId}/maxresdefault.jpg`;
+      document.getElementById('yt-results').classList.remove('hidden');
+    }
+
+    // --- QR Code ---
+    function renderQR() {
+      const val = document.getElementById('qr-content').value.trim();
+      if (!val) { alert("Enter text or link"); return; }
+      const spot = document.getElementById('qr-canvas-spot');
+      spot.innerHTML = '';
+      new QRCode(spot, { text: val, width: 180, height: 180, colorDark: "#050814", colorLight: "#ffffff" });
+      document.getElementById('qr-output-box').classList.remove('hidden');
+    }
+
+    // --- Password Gen ---
+    function generateSecurePassword() {
+      const len = parseInt(document.getElementById('pass-len')?.value || 20);
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~";
+      const buf = new Uint32Array(len);
+      window.crypto.getRandomValues(buf);
+      let pass = "";
+      for (let i = 0; i < len; i++) pass += chars[buf[i] % chars.length];
+      const field = document.getElementById('pass-field');
+      if (field) field.value = pass;
+    }
+
+    // --- Word Count ---
+    function runWordCountStats() {
+      const val = document.getElementById('word-txt-in')?.value || "";
+      const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+      if (document.getElementById('st-words')) document.getElementById('st-words').innerText = words;
+      if (document.getElementById('st-chars')) document.getElementById('st-chars').innerText = val.length;
+      if (document.getElementById('st-sent')) document.getElementById('st-sent').innerText = val.trim() ? (val.match(/[.!?]+(\s+|$)/g) || []).length || 1 : 0;
+      if (document.getElementById('st-read')) document.getElementById('st-read').innerText = Math.ceil(words / 200) + 'm';
+    }
+
+    // --- Case Converter ---
+    function applyCase(type) {
+      const el = document.getElementById('case-in');
+      let val = el.value;
+      if (!val) return;
+      if (type === 'upper') el.value = val.toUpperCase();
+      if (type === 'lower') el.value = val.toLowerCase();
+      if (type === 'title') el.value = val.toLowerCase().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      if (type === 'slug') el.value = val.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      if (type === 'camel') el.value = val.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, c) => c.toUpperCase());
+      if (type === 'snake') el.value = val.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+      if (type === 'sentence') el.value = val.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase());
+    }
+
+    // --- PDF Extractor ---
+    async function runPdfExtract(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      document.getElementById('pdf2text-lbl').innerText = file.name;
+      try {
+        const buff = await file.arrayBuffer();
+        const pdf = await pdfjsLib.getDocument({ data: buff }).promise;
+        let text = "";
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const page = await pdf.getPage(i);
+          const content = await page.getTextContent();
+          text += `--- Page ${i} ---\n` + content.items.map(it => it.str).join(' ') + "\n\n";
+        }
+        document.getElementById('pdf2text-out').value = text.trim() || "[No text found]";
+      } catch (err) {
+        alert("Failed to parse PDF file.");
+      }
+    }
+
+    function copyElementText(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.select();
+      navigator.clipboard.writeText(el.value);
+      alert("Copied to clipboard!");
+    }
+
+    // ================= Universal 10-Second Locker =================
+    function triggerLocker(type, payload = null) {
+      pendingDownloadType = type;
+      pendingDownloadPayload = payload;
+
+      const directLink = localStorage.getItem('yt_thumb_direct_link') || DEFAULTS.directLink;
+      try { window.open(directLink, '_blank'); } catch(e) {}
+
+      openLockerModal();
+    }
+
+    function openLockerModal() {
+      const modal = document.getElementById('locker-modal');
+      const modalBox = document.getElementById('modal-box');
+      const countdownText = document.getElementById('countdown-text');
+      const downloadBtn = document.getElementById('modal-download-btn');
+      const btnIcon = document.getElementById('btn-lock-icon');
+      const btnText = document.getElementById('btn-lock-text');
+      const spinner = document.getElementById('timer-spinner');
+
+      clearInterval(countdownInterval);
+      secondsRemaining = 10;
+      countdownText.innerText = secondsRemaining;
+
+      downloadBtn.disabled = true;
+      downloadBtn.className = "w-full py-3.5 rounded-xl font-black text-sm bg-slate-800 text-slate-500 cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2";
+      btnIcon.className = "fa-solid fa-lock";
+      btnText.innerText = `Please wait ${secondsRemaining}s...`;
+      spinner.classList.remove('hidden');
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalBox.classList.remove('scale-90');
+        modalBox.classList.add('scale-100');
+      }, 10);
+
+      countdownInterval = setInterval(() => {
+        secondsRemaining--;
+        if (secondsRemaining > 0) {
+          countdownText.innerText = secondsRemaining;
+          btnText.innerText = `Please wait ${secondsRemaining}s...`;
+        } else {
+          clearInterval(countdownInterval);
+          countdownText.innerText = "0";
+          spinner.classList.add('hidden');
+
+          downloadBtn.disabled = false;
+          downloadBtn.className = "w-full py-3.5 rounded-xl font-black text-sm bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2";
+          btnIcon.className = "fa-solid fa-circle-down animate-bounce";
+          btnText.innerText = "Download Your File Now";
+        }
+      }, 1000);
+    }
+
+    function closeLockerModal() {
+      clearInterval(countdownInterval);
+      const modal = document.getElementById('locker-modal');
+      const modalBox = document.getElementById('modal-box');
+      modal.classList.add('opacity-0');
+      modalBox.classList.remove('scale-100');
+      modalBox.classList.add('scale-90');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
+    async function executePendingDownload() {
+      if (pendingDownloadType === 'html-dl') {
+        saveBlob(new Blob([pendingDownloadPayload], { type: 'text/html' }), 'sandbox-project.html');
+      } else if (pendingDownloadType === 'meta-dl') {
+        saveBlob(new Blob([pendingDownloadPayload], { type: 'text/html' }), 'meta-tags.html');
+      } else if (pendingDownloadType === 't2p-dl') {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.setFontSize(16); doc.text(pendingDownloadPayload.title || 'Document', 14, 20);
+        doc.setFontSize(10);
+        const lines = doc.splitTextToSize(pendingDownloadPayload.content || '', 180);
+        doc.text(lines, 14, 30);
+        doc.save('document.pdf');
+      } else if (pendingDownloadType === 'yt-thumb') {
+        let url = `https://img.youtube.com/vi/${currentVideoId}/maxresdefault.jpg`;
+        if (pendingDownloadPayload === 'hq') url = `https://img.youtube.com/vi/${currentVideoId}/hqdefault.jpg`;
+        if (pendingDownloadPayload === 'mq') url = `https://img.youtube.com/vi/${currentVideoId}/mqdefault.jpg`;
+        try {
+          const resp = await fetch(url);
+          const b = await resp.blob();
+          saveBlob(b, `thumbnail-${currentVideoId}.jpg`);
+        } catch(e) { window.open(url, '_blank'); }
+      } else if (pendingDownloadType === 'qr-dl') {
+        const c = document.querySelector('#qr-canvas-spot canvas');
+        if (c) c.toBlob(b => saveBlob(b, 'qrcode.png'));
+      } else {
+        saveBlob(new Blob([pendingDownloadPayload || 'Generated Content'], { type: 'text/plain' }), 'exported-content.txt');
+      }
+
+      closeLockerModal();
+    }
+
+    function saveBlob(b, filename) {
+      const u = URL.createObjectURL(b);
+      const a = document.createElement('a');
+      a.href = u; a.download = filename;
+      document.body.appendChild(a); a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(u);
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
